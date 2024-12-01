@@ -1,0 +1,13 @@
+# These should all fail:
+./logread -K Manav_Shivani ../secret.txt
+./logread -K Manav_Shivani ../../etc/passwd
+./logread -K Manav_Shivani "..\\windows\\system32\\config"
+./logread -K Manav_Shivani "test;rm -rf *"
+./logread -K Manav_Shivani "/etc/passwd"
+./logread -K Manav_Shivani "C:\\windows\\system32\\config"
+./logread -K Manav_Shivani ".htaccess"
+./logread -K Manav_Shivani "file.php"
+
+# These should succeed (if the files exist):
+./logread -K Manav_Shivani logfile.txt
+./logread -K Manav_Shivani log.txt
